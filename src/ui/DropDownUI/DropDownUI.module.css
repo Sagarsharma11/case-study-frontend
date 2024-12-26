@@ -1,0 +1,81 @@
+.dropdown--container {
+    border: 1px solid gray;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    padding: 0.5rem 1rem;
+    border-radius: 0.2rem;
+    cursor: pointer;
+    position: relative;
+}
+
+.--heading {
+    /* Optional: Add styles for the heading */
+}
+
+.--body {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 0.2rem;
+    margin-top: 0.5rem;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transform-origin: top;
+    animation: slideDown 0.3s ease-out;
+    width: fit-content;
+    max-width: 10rem;
+    max-height: 8rem;
+    overflow: auto;
+    z-index: 1;
+}
+
+/* Hide the scrollbar for Chrome, Edge, and Safari */
+.--body::-webkit-scrollbar {
+    display: none;
+    /* Hides the scrollbar */
+}
+
+/* Hide the scrollbar for Firefox */
+.--body {
+    scrollbar-width: none;
+    /* Firefox-specific property */
+}
+
+/* Optional: Ensure the content is scrollable without the scrollbar */
+.--body {
+    -ms-overflow-style: none;
+    /* Internet Explorer 10+ */
+}
+
+.--body p {
+    padding: .5rem 1rem;
+    margin: 0;
+}
+
+.--body p:hover {
+    background-color: rgb(228, 228, 228);
+}
+
+@keyframes slideDown {
+    from {
+        transform: scaleY(0);
+        opacity: 0;
+    }
+
+    to {
+        transform: scaleY(1);
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 480px )  {
+    .--body {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: unset;
+    }
+}
